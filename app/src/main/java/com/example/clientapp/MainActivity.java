@@ -27,6 +27,8 @@ import android.os.Messenger;
 
 public class MainActivity extends AppCompatActivity {
 
+    String response = null;
+
     public static boolean hasPermissions(Context context, String... permissions) {
         //Check for permissions
         if (context != null && permissions != null) {
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             //Enable submit button once we get the result
             Button submit = findViewById(R.id.button);
             submit.setEnabled(true);
+
+            response = intent.getExtras().get("Res").toString();
 
             //Show alert with response
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
